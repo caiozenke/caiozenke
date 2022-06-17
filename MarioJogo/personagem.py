@@ -4,10 +4,9 @@ from config import *
 class Personagem(py.sprite.Sprite):
 	def __init__(self,pos,grupos,colisao_sprites):
 		super().__init__(grupos)
-		self.image = py.Surface((blocos_tam // 2,blocos_tam))
-  		#self.image = py.image.load('pulo2.png')
+
+		self.image = py.image.load('pulo2.png')
 									#deixar em 32 px 
-		self.image.fill(personagem_cor)
 		self.rect = self.image.get_rect(topleft = pos)
 
 		# movimentacao

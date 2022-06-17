@@ -30,7 +30,7 @@ class Level:
 					self.personagem = Personagem((x,y),[self.ver_sprites,self.ativa_sprites],self.colisao_sprites)
 
 	def run(self):
-		# run the entire game (level)
+		
 		self.ativa_sprites.update()
 		self.ver_sprites.desenhar_dif(self.personagem)
 
@@ -41,9 +41,7 @@ class Camera(py.sprite.Group):
 		self.exibir = py.display.get_surface()
 		self.deslocar = py.math.Vector2(100,300)
 
-		# center camera setup 
-		# self.half_w = self.display_surface.get_size()[0] // 2
-		# self.half_h = self.display_surface.get_size()[1] // 2
+		
 
 		# camera
 		cam_esquerda = camera_borda['esquerda']
@@ -57,7 +55,7 @@ class Camera(py.sprite.Group):
 
 		
 
-		# getting the camera position
+		# posição da camera
 		if personagem.rect.left < self.camera_rect.left:
 			self.camera_rect.left = personagem.rect.left
 		if personagem.rect.right > self.camera_rect.right:
@@ -74,4 +72,7 @@ class Camera(py.sprite.Group):
 
 		for sprite in self.sprites():
 			deslocar_pos = sprite.rect.topleft - self.deslocar
+   
+			#desenha todas
 			self.exibir.blit(sprite.image,deslocar_pos)
+			
