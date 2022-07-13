@@ -1,13 +1,27 @@
 import pygame as py
+
 from config import *
+
+diretorio_principal = os.path.dirname(__file__)
+diretorio_imagens = os.path.join(diretorio_principal , 'imagens')
 
 class Personagem(py.sprite.Sprite):
 	def __init__(self,pos,grupos,colisao_sprites):
 		super().__init__(grupos)
 
-		self.image = py.image.load('pulo2.png')
-									#deixar em 32 px 
+		sprite_sheet = py.image.load(os.path.join(diretorio_imagens, 'dino.png')).convert_alpha()
+		self.imagens_perso= []
+		for i in range(4):
+			img = sprite_sheet.subsurface((i * 32,0),(32,32))
+			img = py.transform.scale(img, (32*3, 32*3))
+			self.imagens_perso.append(img)
+		self.index_lista = 0
+
+		self.image =self.imagens_perso[self.index_lista]
 		self.rect = self.image.get_rect(topleft = pos)
+		self.rect.center = (100,tela_altura - 120)
+									#deixar em 32 px 
+		
 
 		# movimentacao
 		self.direcao = py.math.Vector2()#[x:0

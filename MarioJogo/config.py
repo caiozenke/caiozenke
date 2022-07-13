@@ -1,4 +1,5 @@
 #mapa
+import os
 blocos_tam= 64
 tela_largura =1200
 mapa = [
@@ -15,7 +16,8 @@ mapa = [
 'XXXXXXXX  XXXXXX  XX  XXXX  ']
 #0 
             #64 px
-
+diretorio_principal = os.path.dirname(__file__)
+diretorio_imagens = os.path.join(diretorio_principal , 'imagens')
 tela_altura =  len(mapa) *blocos_tam
 
 #cores
