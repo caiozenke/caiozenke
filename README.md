@@ -1,4 +1,6 @@
 ### Hi there 👋
+Entre Oct e Nov - parei de programar para estudar para o ENEM 
+<br>
 -->
 <h2 align="center"> Caio Zenke - Estudante IFC - Tec.Info </h2>
 
